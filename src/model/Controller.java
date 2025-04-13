@@ -7,8 +7,8 @@ import model.MatrizNumerica;
 public class Controller {
 
     private SalaCine cinemark; // Declarando sala de cine
-    private MatrizNumerica matriz1;
-    private MatrizNumerica matriz2;
+    private MatrizNumerica matriz1; // Declarando matriz numerica numero 1
+    private MatrizNumerica matriz2; // Declarando matriz numerica numero 2
 
     /**
      * Constructor de la clase Controller para inicializar 
@@ -17,8 +17,15 @@ public class Controller {
      * @post Se crea una instancia de Controller 
      */
     public Controller() {
-        matriz1 = new MatrizNumerica(2,2);
-        matriz2 = new MatrizNumerica(2,2);
+    }
+
+    public void crearMatrices(int filas, int columnas) {
+        matriz1 = new MatrizNumerica(filas, columnas);
+        matriz2 = new MatrizNumerica(filas, columnas);
+    }
+
+    public MatrizNumerica sumarMatrices() {
+        return matriz1.sumar(matriz2);
     }
 
     public void inicialiceSala() {
@@ -41,15 +48,13 @@ public class Controller {
         return cinemark.retornarCantColumnas();
     }
 
-    public MatrizNumerica getMatriz1() {
+    public MatrizNumerica getMatriz1(){
         return matriz1;
     }
 
-    public MatrizNumerica getMatriz2() {
+    public MatrizNumerica getMatriz2(){
         return matriz2;
     }
-
-
 
 
 }
