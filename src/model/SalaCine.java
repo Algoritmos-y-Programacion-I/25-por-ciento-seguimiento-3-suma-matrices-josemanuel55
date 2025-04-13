@@ -48,4 +48,4 @@ public class SalaCine {
     public int retornarCantColumnas() {
         return asientos[0].length;
     }
-}
+} 
